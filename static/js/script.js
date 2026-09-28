@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll("input[type=number]").forEach(i=>{i.addEventListener("input",()=>{if(Number(i.value)>100)i.value=100;if(Number(i.value)<0)i.value=0})})});
