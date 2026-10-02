@@ -28,7 +28,12 @@ from models.database import (
 
 app = Flask(__name__)
 
-app.secret_key = "capacity-connect-secret-key-2026"
+import os
+
+app.secret_key = os.environ.get(
+    "SECRET_KEY",
+    "development-secret-key"
+)
 
 
 # ============================================================
@@ -430,9 +435,8 @@ def progress():
 # ============================================================
 
 if __name__ == "__main__":
-
     app.run(
         debug=True,
-        host="127.0.0.1",
+        host="0.0.0.0",
         port=5000
     )
